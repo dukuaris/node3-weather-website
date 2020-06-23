@@ -18,9 +18,10 @@ const forecast = (latitude, longitude, callback) => {
       const description = body.current.weather_descriptions[0];
       const realTemp = body.current.temperature;
       const precip = body.current.precip * 100;
+      const humidity = body.current.humidity;
       callback(
         undefined,
-        `${description}. It is currently ${realTemp} degrees out. There is ${precip}% chance of rain.`
+        `${description}. It is currently ${realTemp} degrees out. There is ${precip}% chance of rain. The humidity is ${humidity}%`
       );
     }
   });
